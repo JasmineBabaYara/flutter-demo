@@ -1,0 +1,17 @@
+# Pub-generated files and directories
+.dart_tool/
+build/
+# pubspec.lock # Uncomment this line if you are building a library package
+
+# API documentation
+doc/api/
+
+# IDE and editor-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Generated files (optional, depending on project needs)
+# *.g.dart
