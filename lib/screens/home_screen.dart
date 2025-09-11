@@ -22,6 +22,11 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distributing space evenly
           crossAxisAlignment: CrossAxisAlignment.center, // Centering children horizontally \
           children: [
+            Row(
+              children: [
+                Icon(Icons.home),
+              ],
+            ),
             Text("Hello"),
             Text("Hello"),
             Text("Hello"),
