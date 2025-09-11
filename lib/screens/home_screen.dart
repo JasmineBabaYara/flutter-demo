@@ -19,18 +19,18 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distributing space evenly
-          crossAxisAlignment: CrossAxisAlignment.center, // Centering children horizontally \
           children: [
-            Row(
-              children: [
-                Icon(Icons.home),
-              ],
+            Expanded(child: Container(color: Colors.amber)),
+            Container(
+              padding: EdgeInsets.all(14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(onPressed: () {}, child: Text('New Reminder')),
+                  TextButton(onPressed: () {}, child: Text('Add List'))
+                ],
+              ),
             ),
-            Text("Hello"),
-            Text("Hello"),
-            Text("Hello"),
-            Text("Hello"),
           ],
         ),
       ),
