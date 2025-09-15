@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/category.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final List<Category> categories = [
+    Category(id: 'today', name: 'Today'),
+    Category(id: 'schedule', name: 'Scheduled'),
+    Category(id: 'all', name: 'All'),
+    Category(id: 'flag', name: 'Flagged'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,32 +35,34 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 10,
                 childAspectRatio: 16 / 9,
                 padding: EdgeInsets.all(10),
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF1A191D),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF1A191D),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF1A191D),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF1A191D),
-                    ),
-                  ),
-                ],
+                children: categories
+                    .map(
+                      (category) => Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xFF1A191D),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(Icons.email, color: Colors.white),
+                                  SizedBox(width: 8),
+                                  Text('0', style: TextStyle(color: Colors.white)),
+                                ],
+                              ),
+                               Text(category.name)
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
               ),
             ),
             Container(
