@@ -1,14 +1,44 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/common.widgets/category_icon.dart';
 import 'package:flutter_application_1/models/category.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final List<Category> categories = [
-    Category(id: 'today', name: 'Today'),
-    Category(id: 'schedule', name: 'Scheduled'),
-    Category(id: 'all', name: 'All'),
-    Category(id: 'flag', name: 'Flagged'),
+    Category(
+      id: 'today',
+      name: 'Today',
+      icon: CategoryIcon(
+        bgColor: CupertinoColors.systemBlue,
+        iconData: CupertinoIcons.calendar_today,
+      ),
+    ),
+    Category(
+      id: 'schedule',
+      name: 'Scheduled',
+      icon: CategoryIcon(
+        bgColor: CupertinoColors.systemRed,
+        iconData: CupertinoIcons.calendar,
+      ),
+    ),
+    Category(
+      id: 'all',
+      name: 'All',
+      icon: CategoryIcon(
+        bgColor: CupertinoColors.systemGrey,
+        iconData: Icons.inbox_rounded,
+      ),
+    ),
+    Category(
+      id: 'flag',
+      name: 'Flagged',
+      icon: CategoryIcon(
+        bgColor: CupertinoColors.activeOrange,
+        iconData: CupertinoIcons.flag_fill,
+      ),
+    ),
   ];
 
   @override
@@ -49,14 +79,18 @@ class HomeScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Icon(Icons.email, color: Colors.white),
                                   SizedBox(width: 8),
-                                  Text('0', style: TextStyle(color: Colors.white)),
+                                  Text(
+                                    '0',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ],
                               ),
-                               Text(category.name)
+                              Text(category.name),
                             ],
                           ),
                         ),
