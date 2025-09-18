@@ -14,10 +14,14 @@ class ListViewItems extends StatefulWidget {
 class _ListViewItemsState extends State<ListViewItems> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ReorderableListView(
+      onReorder: (int oldIndex, int newIndex) {
+        print('reordered list');
+      },
       children: widget.categoryCollection.categories
           .map(
             (category) => ListTile(
+              key: UniqueKey(),
               tileColor: Colors.grey[800],
               leading: Container(
             
