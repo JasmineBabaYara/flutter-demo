@@ -17,6 +17,14 @@ class _ListViewItemsState extends State<ListViewItems> {
     return ReorderableListView(
       onReorder: (int oldIndex, int newIndex) {
         print('reordered list');
+        if(newIndex > oldIndex) {
+          newIndex -= 1;
+        }
+
+        final item = widget.categoryCollection.categories.removeAt(oldIndex);
+        setState(() {
+          widget.categoryCollection.categories.insert(newIndex, item);
+        });
       },
       children: widget.categoryCollection.categories
           .map(
