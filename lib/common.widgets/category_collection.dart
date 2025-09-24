@@ -4,7 +4,7 @@ import 'package:flutter_application_1/common.widgets/category_icon.dart';
 import 'package:flutter_application_1/models/category.dart';
 
 class CategoryCollection {
-    final List<Category> categories = [
+    final List<Category> _categories = [
        Category(
       id: 'today',
       name: 'Today',
@@ -39,3 +39,5 @@ class CategoryCollection {
     ),
   ];
 }
+
+List <Category> get categories => _categories;
