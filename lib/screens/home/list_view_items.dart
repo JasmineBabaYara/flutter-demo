@@ -21,9 +21,9 @@ class _ListViewItemsState extends State<ListViewItems> {
           newIndex -= 1;
         }
 
-        final item = widget.categoryCollection.categories.removeAt(oldIndex);
+        final item = widget.categoryCollection.removeItem(oldIndex);
         setState(() {
-          widget.categoryCollection.categories.insert(newIndex, item);
+          widget.categoryCollection.insert(newIndex, item);
         });
       },
       children: widget.categoryCollection.categories
