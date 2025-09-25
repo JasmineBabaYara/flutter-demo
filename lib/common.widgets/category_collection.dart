@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common.widgets/category_icon.dart';
@@ -38,6 +40,15 @@ class CategoryCollection {
       ),
     ),
   ];
-}
 
-List <Category> get categories => _categories;
+  UnmodifiableListView<Category> get categories => UnmodifiableListView(_categories);
+
+  Category removeItem(index){
+    return _categories.removeAt(index);
+  }
+
+    void insert(index, item){
+      _categories.insert(index, item) ;
+    }
+
+}
